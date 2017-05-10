@@ -813,7 +813,7 @@ System.out.println("Leaving " + kcontext.getNodeInstance().getNodeName() +" Node
       <bpmn2:dataInputAssociation id="_0v6TClsnEeaIg7vKOCJn6w">
         <bpmn2:targetRef>_5375B80A-EE19-4F69-85DE-FA69583D719A_UrlInputX</bpmn2:targetRef>
         <bpmn2:assignment id="_0v6TC1snEeaIg7vKOCJn6w">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_0v6TDFsnEeaIg7vKOCJn6w"><![CDATA[http://flight-service/acme-flight-service-1.0/AcmeDemoInterface?wsdl]]></bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_0v6TDFsnEeaIg7vKOCJn6w"><![CDATA[http://flight-service:8080/acme-flight-service-1.0/AcmeDemoInterface?wsdl]]></bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_0v6TDVsnEeaIg7vKOCJn6w">_5375B80A-EE19-4F69-85DE-FA69583D719A_UrlInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -906,7 +906,7 @@ System.out.println("Leaving " + kcontext.getNodeInstance().getNodeName() +" Node
       <bpmn2:dataInputAssociation id="_0v6TKFsnEeaIg7vKOCJn6w">
         <bpmn2:targetRef>_B3CB7C69-D7CA-4701-B254-D90D2B7732B4_UrlInputX</bpmn2:targetRef>
         <bpmn2:assignment id="_0v6TKVsnEeaIg7vKOCJn6w">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_0v6TKlsnEeaIg7vKOCJn6w"><![CDATA[http://hotel-service/acme-hotel-service-1.0/HotelWS?wsdl]]></bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_0v6TKlsnEeaIg7vKOCJn6w"><![CDATA[http://hotel-service:8080/acme-hotel-service-1.0/HotelWS?wsdl]]></bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_0v6TK1snEeaIg7vKOCJn6w">_B3CB7C69-D7CA-4701-B254-D90D2B7732B4_UrlInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
