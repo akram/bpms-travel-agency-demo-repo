@@ -105,7 +105,7 @@
       <bpmn2:dataInputAssociation id="_nALaN4nrEeSyKp4PgNpTlg">
         <bpmn2:targetRef>_03D60194-C228-42B9-8B34-D4ED214791B9_UrlInputX</bpmn2:targetRef>
         <bpmn2:assignment id="_nALaOInrEeSyKp4PgNpTlg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_nALaOYnrEeSyKp4PgNpTlg"><![CDATA[http://localhost:8080/acme-flight-service-1.0/AcmeDemoInterface?wsdl]]></bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_nALaOYnrEeSyKp4PgNpTlg"><![CDATA[http://flight-service/acme-flight-service-1.0/AcmeDemoInterface?wsdl]]></bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_nALaOonrEeSyKp4PgNpTlg">_03D60194-C228-42B9-8B34-D4ED214791B9_UrlInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -287,7 +287,7 @@ System.out.println("Leaving [" + kcontext.getNodeInstance().getNodeName() +"] No
       <bpmn2:dataInputAssociation id="_nAMBUInrEeSyKp4PgNpTlg">
         <bpmn2:targetRef>_A591D204-6EB4-4BCC-9F9E-849E2869ED62_UrlInputX</bpmn2:targetRef>
         <bpmn2:assignment id="_nAMBUYnrEeSyKp4PgNpTlg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_nAMBUonrEeSyKp4PgNpTlg"><![CDATA[http://localhost:8080/acme-hotel-service-1.0/HotelWS?wsdl]]></bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_nAMBUonrEeSyKp4PgNpTlg"><![CDATA[http://hotel-service/acme-hotel-service-1.0/HotelWS?wsdl]]></bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_nAMBU4nrEeSyKp4PgNpTlg">_A591D204-6EB4-4BCC-9F9E-849E2869ED62_UrlInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -387,7 +387,7 @@ System.out.println("Leaving [" + kcontext.getNodeInstance().getNodeName() +"] No
       <bpmn2:dataInputAssociation id="_nAMoX4nrEeSyKp4PgNpTlg">
         <bpmn2:targetRef>_2CDBB76E-0E0E-40A9-AFEC-E6B14C8CE0B8_UrlInputX</bpmn2:targetRef>
         <bpmn2:assignment id="_nAMoYInrEeSyKp4PgNpTlg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_nAMoYYnrEeSyKp4PgNpTlg"><![CDATA[http://localhost:8080/acme-hotel-service-1.0/HotelWS?wsdl]]></bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_nAMoYYnrEeSyKp4PgNpTlg"><![CDATA[http://hotel-service/acme-hotel-service-1.0/HotelWS?wsdl]]></bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_nAMoYonrEeSyKp4PgNpTlg">_2CDBB76E-0E0E-40A9-AFEC-E6B14C8CE0B8_UrlInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -464,7 +464,7 @@ System.out.println("Leaving [" + kcontext.getNodeInstance().getNodeName() +"] No
       <bpmn2:dataInputAssociation id="_nANPZ4nrEeSyKp4PgNpTlg">
         <bpmn2:targetRef>_FE3E3F28-894B-4111-9120-D32838EE3356_UrlInputX</bpmn2:targetRef>
         <bpmn2:assignment id="_nANPaInrEeSyKp4PgNpTlg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_nANPaYnrEeSyKp4PgNpTlg"><![CDATA[http://localhost:8080/acme-flight-service-1.0/AcmeDemoInterface?wsdl]]></bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_nANPaYnrEeSyKp4PgNpTlg"><![CDATA[http://flight-service/acme-flight-service-1.0/AcmeDemoInterface?wsdl]]></bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_nANPaonrEeSyKp4PgNpTlg">_FE3E3F28-894B-4111-9120-D32838EE3356_UrlInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
