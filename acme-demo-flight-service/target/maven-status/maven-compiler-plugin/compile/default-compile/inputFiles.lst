@@ -1,0 +1,14 @@
+/Users/Akram/Projects/RHT/bpms-travel-agency-demo-repo/acme-demo-flight-service/src/main/java/com/jboss/soap/service/acmedemo/package-info.java
+/Users/Akram/Projects/RHT/bpms-travel-agency-demo-repo/acme-demo-flight-service/src/main/java/com/jboss/soap/service/acmedemo/impl/AcmeDemoInterfaceImpl.java
+/Users/Akram/Projects/RHT/bpms-travel-agency-demo-repo/acme-demo-flight-service/src/main/java/com/jboss/soap/service/acmedemo/ObjectFactory.java
+/Users/Akram/Projects/RHT/bpms-travel-agency-demo-repo/acme-demo-flight-service/src/main/java/com/jboss/soap/service/acmedemo/AcmeDemoInterface.java
+/Users/Akram/Projects/RHT/bpms-travel-agency-demo-repo/acme-demo-flight-service/src/main/java/com/jboss/soap/service/acmedemo/Flight.java
+/Users/Akram/Projects/RHT/bpms-travel-agency-demo-repo/acme-demo-flight-service/src/main/java/com/jboss/soap/service/acmedemo/ListAvailablePlanesResponse.java
+/Users/Akram/Projects/RHT/bpms-travel-agency-demo-repo/acme-demo-flight-service/src/main/java/com/jboss/soap/service/acmedemo/AcmeDemoService.java
+/Users/Akram/Projects/RHT/bpms-travel-agency-demo-repo/acme-demo-flight-service/src/main/java/com/jboss/soap/service/acmedemo/FlightRequest.java
+/Users/Akram/Projects/RHT/bpms-travel-agency-demo-repo/acme-demo-flight-service/src/main/java/com/jboss/soap/service/acmedemo/CancelBooking.java
+/Users/Akram/Projects/RHT/bpms-travel-agency-demo-repo/acme-demo-flight-service/src/main/java/com/jboss/soap/service/acmedemo/CancelBookingResponse.java
+/Users/Akram/Projects/RHT/bpms-travel-agency-demo-repo/acme-demo-flight-service/src/main/java/com/jboss/soap/service/acmedemo/ListAvailablePlanes.java
+/Users/Akram/Projects/RHT/bpms-travel-agency-demo-repo/acme-demo-flight-service/src/main/java/com/jboss/soap/service/acmedemo/BookFlightsResponse.java
+/Users/Akram/Projects/RHT/bpms-travel-agency-demo-repo/acme-demo-flight-service/src/main/java/com/jboss/soap/service/acmedemo/impl/SessionIdentifierGenerator.java
+/Users/Akram/Projects/RHT/bpms-travel-agency-demo-repo/acme-demo-flight-service/src/main/java/com/jboss/soap/service/acmedemo/BookFlights.java

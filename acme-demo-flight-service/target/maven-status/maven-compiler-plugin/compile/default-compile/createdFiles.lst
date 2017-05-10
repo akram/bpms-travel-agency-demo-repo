@@ -1,0 +1,14 @@
+com/jboss/soap/service/acmedemo/CancelBooking.class
+com/jboss/soap/service/acmedemo/impl/SessionIdentifierGenerator.class
+com/jboss/soap/service/acmedemo/BookFlightsResponse.class
+com/jboss/soap/service/acmedemo/Flight.class
+com/jboss/soap/service/acmedemo/package-info.class
+com/jboss/soap/service/acmedemo/ObjectFactory.class
+com/jboss/soap/service/acmedemo/impl/AcmeDemoInterfaceImpl.class
+com/jboss/soap/service/acmedemo/AcmeDemoInterface.class
+com/jboss/soap/service/acmedemo/BookFlights.class
+com/jboss/soap/service/acmedemo/ListAvailablePlanes.class
+com/jboss/soap/service/acmedemo/FlightRequest.class
+com/jboss/soap/service/acmedemo/CancelBookingResponse.class
+com/jboss/soap/service/acmedemo/AcmeDemoService.class
+com/jboss/soap/service/acmedemo/ListAvailablePlanesResponse.class
