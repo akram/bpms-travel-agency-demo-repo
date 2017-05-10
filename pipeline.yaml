@@ -1,0 +1,71 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  creationTimestamp: null
+  labels:
+    build: bpms-travel-agency-demo-repo 
+  name: bpms-travel-agency-demo-repo
+spec:
+  nodeSelector: null
+  output: {}
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    type: None
+  strategy:
+    jenkinsPipelineStrategy:
+      jenkinsfile: "stage 'Build'\n\nnode('maven') {\n    echo \"Groovy:  Build stage:
+        \ \";\n    git url: 'https://github.com/akram/bpms-travel-agency-demo-repo.git',
+        branch: 'openshift'\n    def version = getBuildVersion(\"pom.xml\")\n    version='1.0.0'\n
+        \   env.BUILD_VERSION = version\n    env.BUILD_GROUP_ID = getGroupIdFromPom(\"pom.xml\")\n
+        \   env.BUILD_ARTIFACT_ID = getArtifactIdFromPom(\"pom.xml\")\n    def branch
+        = 'build-' + version\n    env.BUILD_BRANCH = branch\n    prepareBuild(version,
+        branch)\n    build()\n    stash excludes: 'target/', includes: '**', name:
+        'source'\n}\n\nstage 'Integrate'\nnode {\n    unstash 'source'\n    integrationTests()
+        \   \n}\n\nstage 'Publish'\nnode {\n    unstash 'source'\n    publishToNexusAndCommitBranch(env.BUILD_VERSION,
+        env.BUILD_BRANCH)\n}\n\nstage 'QA'\nnode {\n    checkPort(\"bpmsqa\", \"8080\");\n
+        \   deployToBPMS(\"bpmsqa:8080\")\n}\n\nstage 'Approve'\ntimeout(time: 2,
+        unit: 'DAYS') {\n    input message: 'Do you want to deploy into production?'\n}\n\nstage
+        'Production'\nnode('maven') {\n    checkPort(\"bpmsprod\", \"8080\");\n    deployToBPMS(\"bpmsprod:8080\")\n}\n\ndef
+        checkPort(server, port) {\n  sh \"checkPort.sh ${server} ${port}\"\n}\n\ndef
+        prepareBuild(version, branch) {\n   // sh \"git checkout -b ${branch}\"\n
+        \  // withEnv([\"PATH+MAVEN=${tool 'maven-3.2.5'}/bin\"]) {\n        sh \"mvn
+        -f pom.xml versions:set -DgenerateBackupPoms=false -DnewVersion=${version}\"\n
+        \   //}\n}\n\ndef build() {\t\n    //withEnv([\"PATH+MAVEN=${tool 'maven-3.2.5'}/bin\"])
+        {\n        sh \"mvn -f pom.xml clean package\"\n        sh \"mvn -f acme-data-model/pom.xml
+        clean package\"\n    //}\n}\n\ndef integrationTests() {\n   // withEnv([\"PATH+MAVEN=${tool
+        'maven-3.2.5'}/bin\"]) {\t\n\t    sh \"mvn -f pom.xml verify\"\n   // }\n}\n\ndef
+        publishToNexusAndCommitBranch(version, branch) {\n    //withEnv([\"PATH+MAVEN=${tool
+        'maven-3.2.5'}/bin\"]) {\n        checkPort(\"ci\", \"8080\");\n        sh
+        \"mvn -f acme-data-model/pom.xml deploy -DaltDeploymentRepository=internal.nexus::default::http://ci:8080/nexus/content/repositories/releases\"\n
+        \       def commit = \"Build \" + version\n        sh \"git add **/pom.xml
+        && git commit -m \\\"${commit}\\\" && git push origin ${branch}\"\n    //}\n}\n\ndef
+        deployToBPMS(server) {\n    def payload = new StringBuilder()\n                        .append(\"<?xml
+        version=\\\"1.0\\\" encoding=\\\"UTF-8\\\" standalone=\\\"yes\\\"?>\")\n                        .append(\"<kie-container
+        container-id=\\\"policyquote-\")\n                        .append(env.BUILD_VERSION)\n
+        \                       .append(\"\\\">\")\n                        .append(\"<release-id>\")\n
+        \                       .append(\"<group-id>\")\n                        .append(env.BUILD_GROUP_ID)\n
+        \                       .append(\"</group-id>\")\n                        .append(\"<artifact-id>\")\n
+        \                       .append(env.BUILD_ARTIFACT_ID)\n                        .append(\"</artifact-id>\")\n
+        \                       .append(\"<version>\")\n                        .append(env.BUILD_VERSION)\n
+        \                       .append(\"</version>\")\n                        .append(\"</release-id></kie-container>\")\n
+        \                       .toString()\n\n    sh \"curl -X PUT -H 'Content-Type:
+        application/xml' -d '${payload}' http://admin:admin123@${server}/kie-server/services/rest/server/containers/policyquote-${env.BUILD_VERSION}\"\n}\n\n\ndef
+        getVersionFromPom(pom) {\n  def matcher = readFile(pom) =~ '<version>(.+)</version>'\n
+        \ matcher ? matcher[0][1] : null\n }\n\ndef getGroupIdFromPom(pom) {\n  def
+        matcher = readFile(pom) =~ '<groupId>(.+)</groupId>'\n  matcher ? matcher[0][1]
+        : null\n }\n\ndef getArtifactIdFromPom(pom) {\n  def matcher = readFile(pom)
+        =~ '<artifactId>(.+)</artifactId>'\n  matcher ? matcher[0][1] : null\n }\n\ndef
+        String getBuildVersion(pom) {\n // return getVersionFromPom(pom).minus(\"-SNAPSHOT\")
+        + '.' + env.BUILD_NUMBER\n  return getVersionFromPom(pom) + '.' + env.BUILD_NUMBER\n}\n\n"
+    type: JenkinsPipeline
+  triggers:
+  - github:
+      secret: ${GITHUB_TRIGGER_SECRET}
+    type: GitHub
+  - generic:
+      secret: ${GENERIC_TRIGGER_SECRET}
+    type: Generic
+status:
+  lastVersion: 0
